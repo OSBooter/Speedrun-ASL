@@ -14,6 +14,7 @@ state("Treadnauts")
 
 startup
 {
+    settings.Add("reminder", false, "This is not a setting, just a reminder to use gametime for any pausing stuff ;)");
     settings.Add("clearpause", false, "Pause after clear for single segments/keep unchecked for RTA");
     settings.Add("resetatzero", false, "If you go back to level 1, reset?");
     settings.Add("clearend", true, "Stop time after clearing the last stage.");

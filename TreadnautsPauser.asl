@@ -96,7 +96,7 @@ start
 
 split
 {
-    //if you choose a previous level on accident it will not split, and it makes sure that the current level is a newer on to split
+    //if you choose a previous level on accident it will not split, and it makes sure the current level is new
     if (old.level == vars.cleared){
         print(current.level.ToString());
         if (current.level == old.level + 1)

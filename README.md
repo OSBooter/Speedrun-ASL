@@ -18,4 +18,4 @@ My AutoSplitters
 
 4. Check the features you need and then you are all set! 
 
-5. If your computer breaks... idk, if the code doesn't work **LET ME KNOW**
+5. If your computer breaks... idk, if the code doesn't work **[LET ME KNOW](https://github.com/OSBooter/Speedrun-ASL/issues)**

@@ -10,7 +10,7 @@ My AutoSplitters
 # How To Use
 1. You'll need [livesplit](http://livesplit.org/downloads/)
 
-2. You need to set up 40 levels by editing splits or by getting them somewhere, like my run on [Speedrun.com](https://www.speedrun.com/Treadnauts/run/y438kvqz) through open splits by url/speedrun.com
+2. You need to set up 40 levels by editing splits or by getting them somewhere, like my run on [Speedrun.com](https://www.speedrun.com/Treadnauts/run/y438kvqz) or [splits.io](https://splits.io/35zt) through open splits by url/speedrun.com
 
 2.5. I guess you could set up *less* levels and uncheck the ones you aren't attempting...
 

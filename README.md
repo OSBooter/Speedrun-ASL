@@ -1,7 +1,8 @@
 # Speedrun-ASL
 My AutoSplitters
 
-# [Treadnauts Target ASL for v1.00](https://github.com/OSBooter/Speedrun-ASL/blob/master/TreadnautsPauser.asl)
+# [Treadnauts Target ASL for v1.00](https://github.com/OSBooter/Speedrun-ASL/blob/master/TreadnautsPauser.asl) I just realized it m
++ I just realized it might not work for your version cause mines from twitch, someone who has the steam version help me out with this!
 + Splits when selecting the next stage
 + Can pause at results screen
 + Can end time when finishing last level.

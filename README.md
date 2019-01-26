@@ -1,7 +1,7 @@
 # Speedrun-ASL
 My AutoSplitters
 
-# Treadnauts Target ASL for v1.00
+# [Treadnauts Target ASL for v1.00](https://github.com/OSBooter/Speedrun-ASL/blob/master/TreadnautsPauser.asl)
 + Splits when selecting the next stage
 + Can pause at results screen
 + Can end time when finishing last level.

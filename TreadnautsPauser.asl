@@ -1,14 +1,20 @@
 state("Treadnauts")
 {
     //bool isLoading : 0x0036BA34;
+    //based off of the AlanWake ASl https://raw.githubusercontent.com/tduva/LiveSplit-ASL/master/AlanWake.asl
     byte level : "mono.dll", 0x001F46AC, 0x10, 0xCA8;
     bool isPaused : "mono.dll", 0x001F4684, 0xF0, 0x84C;
 }
 
 startup
 {
-	settings.Add("rustvalley", true, "Rust Valley");
-	settings.Add("level0", true, "01 - Terrace", "rustvalley");
+    settings.Add("clearpause", false, "Pause after clear for single segments/keep unchecked for RTA");
+    settings.Add("resetatzero", false, "If you go back to level 1, reset?");
+    settings.Add("clearend", true, "Stop time after clearing the last stage.");
+    settings.Add("pauseend", false, "Pause time after clearing the last stage.");
+
+    settings.Add("rustvalley", true, "Rust Valley");
+    settings.Add("level0", true, "01 - Terrace", "rustvalley");
     settings.Add("level1", true, "02 - Pond", "rustvalley");
     settings.Add("level2", true, "03 - Clearing", "rustvalley");
     settings.Add("level3", true, "04 - River", "rustvalley");
@@ -54,15 +60,15 @@ startup
     settings.Add("level37", true, "38 - Big Bro", "wavedistrict");
     settings.Add("level38", true, "39 - Zeitgeist", "wavedistrict");
     settings.Add("level39", true, "40 - Kappa", "wavedistrict");
-	Action<string> DebugOutput = (text) => {
-		print("[Treadnauts Autosplitter] "+text);
-	};
-	vars.DebugOutput = DebugOutput;
+
+    Action<string> DebugOutput = (text) => {
+        print("[Treadnauts Autosplitter] "+text);
+    };
+    vars.DebugOutput = DebugOutput;
 }
 
 init
 {
-    // bool vars.started = false;
     vars.cleared = 0;
 }
 
@@ -73,10 +79,7 @@ exit
 
 update
 {
-    if (current.level == 0)
-    {
-        vars.cleared = 0;
-    }
+
 }
 
 start
@@ -86,24 +89,30 @@ start
 
 split
 {
-//if you choose a previous level on accident it will not split, and it makes sure that the current level is a newer on to split
-    if (current.level == old.level + 1 && old.level == vars.cleared)
-	{
-        vars.cleared = current.level;
-		print(current.level.ToString());
-		// Check setting for previous level value, because the split would
-		// be for the end of the previous level
-		if (settings["level"+old.level])
-		{
-			// vars.DebugOutput("Split Start of Level "+ current.level);
-			return true;
-		}
-	}
+    //if you choose a previous level on accident it will not split, and it makes sure that the current level is a newer on to split
+    if (old.level == vars.cleared){
+        print(current.level.ToString());
+        if (current.level == old.level + 1)
+        {
+            vars.cleared = current.level;
+            // Check setting for previous level value, because the split would
+            // be for the end of the previous level
+            if (settings["level"+old.level])
+            {
+                // vars.DebugOutput("Split Start of Level "+ current.level);
+                return true;
+            }
+        }
+        if (current.level == 39 && current.isPaused){
+            vars.cleared = 0;
+            return true;
+        }
+    }
 }
 
 reset
 {
-    if (current.level == 0)
+    if (settings["clearpause"] && current.level == 0)
     {
         vars.cleared = 0;
     }
@@ -112,5 +121,11 @@ reset
 isLoading
 {
     // vars.DebugOutput("Pause is "+ current.isPaused);
-    return current.isPaused;
+
+    if (settings["clearpause"] && current.level != 39){
+        return current.isPaused;
+    }
+    if (settings["pauseend"]){
+        return current.isPaused;
+    }
 }

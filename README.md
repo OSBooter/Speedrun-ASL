@@ -7,6 +7,7 @@ My AutoSplitters
 + Can pause at results screen
 + Can end time when finishing last level.
 --Make sure to use game time if you are using the auto pause after level complete--
++ This is tested on the twitch version of the game
 
 # How To Setup
 1. You'll need [livesplit](http://livesplit.org/downloads/)

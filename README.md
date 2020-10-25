@@ -1,5 +1,5 @@
 # Speedrun-ASL
-My AutoSplitters
+My AutoSplitters, I've tested it witha fresh computer and it seems to not be working, so I will have to debug it again.
 
 # [Treadnauts Target ASL for v1.00](https://github.com/OSBooter/Speedrun-ASL/blob/master/TreadnautsPauser.asl)
 + I just realized it might not work for your version cause mines from twitch, someone who has the steam version help me out with this!
